@@ -1,8 +1,7 @@
 backend:
   name: github
-  repo: lacritica/website    # Your GitHub username/repo
-  branch: main               # Main branch
-  auth_type: implicit         # For OAuth login
+  repo: lacritica/website
+  branch: main
 
 media_folder: "static/images"
 public_folder: "/images"
