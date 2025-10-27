@@ -1,14 +1,11 @@
 backend:
   name: github
-  repo: lacritica/website       # your organization/repo
-  branch: main                # branch to commit to
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
+  repo: lacritica/website    # Your GitHub username/repo
+  branch: main               # Main branch
+  auth_type: implicit         # For OAuth login
 
-media_folder: "static/uploads"   # where images are stored in the repo
-public_folder: "/uploads"        # how they're accessed in the site
-
-publish_mode: editorial_workflow # optional: allows drafts and approvals
+media_folder: "static/images"
+public_folder: "/images"
 
 collections:
   - name: "posts"
