@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: lacritica/website       # your organization/repo
+  branch: main                # branch to commit to
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+
+media_folder: "static/uploads"   # where images are stored in the repo
+public_folder: "/uploads"        # how they're accessed in the site
+
+publish_mode: editorial_workflow # optional: allows drafts and approvals
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "content/posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
