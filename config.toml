@@ -1,4 +1,30 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = 'ananke'
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "My Magazine Site"
+theme = "hugo-xmag"
+
+# Pagination
+paginate = 10
+
+# Parameters
+[params]
+  description = "A magazine-style Hugo site"
+  author = "Your Name"
+  mainSections = ["posts"]   # Change if your content dir uses something else
+
+# Optional: social or menu items
+[[menu.main]]
+  name = "Politics"
+  url = "/categories/politics/"
+
+[[menu.main]]
+  name = "Literature"
+  url = "/categories/literature/"
+
+[[menu.main]]
+  name = "Arts"
+  url = "/categories/arts/"
+
+[[menu.main]]
+  name = "Ideas"
+  url = "/categories/ideas/"
