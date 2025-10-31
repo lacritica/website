@@ -1,20 +1,28 @@
 backend:
   name: github
-  repo: lacritica/website    # GitHub repository (user/repo)
-  branch: main               # Branch to commit changes
-  auth_scope: repo           # Needed for full repo access
-  base_url: "/website/admin/" # Because your site is hosted under /website/
+  repo: lacritica/website      # change if your repo has a different name
+  branch: main
+  auth_endpoint: https://api.netlify.com/auth
 
-media_folder: "static/images/uploads"
-public_folder: "/website/images/uploads"
+media_folder: "static/uploads"  # where uploaded images go inside the repo
+public_folder: "/uploads"       # how those images are referenced in content
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "content/blog"
+  - name: "posts"
+    label: "Posts"
+    folder: "content/posts"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    folder: "content"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
