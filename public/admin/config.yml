@@ -1,7 +1,12 @@
 backend:
-  name: git-gateway
-  branch: main  # or master, depending on your repo
-  repo: lacritica/website
+  name: github
+  repo: lacritica/website       # GitHub repo
+  branch: main
+  auth_scope: repo               # permissions needed
+  base_url: https://lacritica.github.io/website/
+  oauth_client_id: "Ov23libBOgj0kWggyPBa"
+  oauth_client_secret: "19761c5d793f37c7c8ed3f24a4014a50510bcaf7"
+
 
 media_folder: "static/uploads"
 public_folder: "/uploads"
