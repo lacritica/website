@@ -1,4 +1,3 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://lacritica.github.io/website/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
-theme = 'hugo-xmag'

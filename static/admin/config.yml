@@ -1,11 +1,10 @@
 backend:
-  name: github
-  repo: lacritica/website      # change if your repo has a different name
-  branch: main
-  auth_endpoint: https://api.netlify.com/auth
+  name: git-gateway
+  branch: main  # or master, depending on your repo
+  repo: lacritica/website
 
-media_folder: "static/uploads"  # where uploaded images go inside the repo
-public_folder: "/uploads"       # how those images are referenced in content
+media_folder: "static/uploads"
+public_folder: "/uploads"
 
 collections:
   - name: "posts"
@@ -14,15 +13,6 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
-
-  - name: "pages"
-    label: "Pages"
-    folder: "content"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
