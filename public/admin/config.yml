@@ -4,8 +4,7 @@ backend:
   branch: main
   auth_scope: repo               # permissions needed
   base_url: https://lacritica.github.io/website/
-  oauth_client_id: "Ov23libBOgj0kWggyPBa"
-  oauth_client_secret: "19761c5d793f37c7c8ed3f24a4014a50510bcaf7"
+  personal_access_token: "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"
 
 
 media_folder: "static/uploads"
