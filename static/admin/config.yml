@@ -1,14 +1,11 @@
 backend:
   name: github
-  repo: lacritica/website   # your GitHub repo
-  branch: main              # or 'master' if that’s your default branch
-  base_url: https://api.github.com
-  auth_type: implicit
+  repo: lacritica/website      # change if your repo has a different name
+  branch: main
   auth_endpoint: https://api.netlify.com/auth
 
-
-media_folder: "static/uploads"    # where images will be saved in the repo
-public_folder: "/uploads"         # URL path for the uploaded media
+media_folder: "static/uploads"  # where uploaded images go inside the repo
+public_folder: "/uploads"       # how those images are referenced in content
 
 collections:
   - name: "posts"
@@ -19,4 +16,13 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    folder: "content"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
