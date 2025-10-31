@@ -7,7 +7,7 @@
 *.log
 
 # Node dependencies (if using npm for CMS or themes)
-/node_modules/
+#/node_modules/
 
 # OS files
 Thumbs.db
