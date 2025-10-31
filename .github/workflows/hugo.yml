@@ -3,7 +3,7 @@ name: Deploy Hugo site to GitHub Pages
 on:
   push:
     branches:
-      - main  # Deploy on every push to main branch
+      - main
 
 permissions:
   contents: read
@@ -18,24 +18,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # 1️⃣ Checkout the repo
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # get full history
+          fetch-depth: 0
 
-      # 2️⃣ Setup Hugo
       - name: Setup Hugo
-        uses: actions/setup-hugo@v3
+        uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.128.2" # change if you use another version
+          hugo-version: "0.128.2"
           extended: true
 
-      # 3️⃣ Build the site
       - name: Build Hugo site
         run: hugo --minify
 
-      # 4️⃣ Upload the public folder as artifact
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -51,7 +47,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      # 5️⃣ Deploy artifact to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
